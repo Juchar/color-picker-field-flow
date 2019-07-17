@@ -2,7 +2,7 @@
 
 # Color Picker Field Flow
 
-Vaadin server-side implementation of [<color-picker-field>](https://github.com/Juchar/color-picker-field). 
+Vaadin server-side implementation of [&lt;color-picker-field&gt;](https://github.com/Juchar/color-picker-field). 
 Have a look there to see the demos and options. 
 
 ## Converted vs. Raw Value
