@@ -1,5 +1,7 @@
 [![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/jucharcolor-picker-field-flow)
 
+# ColorPickerField component for Vaadin Flow
+
 This project is the Component wrapper implementation of [`<color-picker-field>`](https://github.com/Juchar/color-picker-field) element
 for use from the server side with [Vaadin Flow](https://github.com/vaadin/flow).
 
