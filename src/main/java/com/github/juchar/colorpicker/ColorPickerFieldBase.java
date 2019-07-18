@@ -2,6 +2,7 @@ package com.github.juchar.colorpicker;
 
 import com.vaadin.flow.component.PropertyDescriptor;
 import com.vaadin.flow.component.PropertyDescriptors;
+import com.vaadin.flow.component.icon.Icon;
 
 public interface ColorPickerFieldBase<T> extends ColorPickerBase<T> {
 
@@ -13,6 +14,18 @@ public interface ColorPickerFieldBase<T> extends ColorPickerBase<T> {
 
   PropertyDescriptor<Integer, Integer> MAX_HISTORY_PROPERTY
       = PropertyDescriptors.propertyWithDefault("maxHistory", 10);
+
+  PropertyDescriptor<String, String> HOVER_ICON_PROPERTY
+      = PropertyDescriptors.propertyWithDefault("hoverIcon", "vaadin:paintbrush");
+
+  PropertyDescriptor<String, String> NATIVE_INPUT_QUERY_PROPERTY
+      = PropertyDescriptors.propertyWithDefault("nativeInputMediaQuery", "");
+
+  PropertyDescriptor<String, String> LABEL_CANCEL_PROPERTY
+      = PropertyDescriptors.propertyWithDefault("labelCancel", "");
+
+  PropertyDescriptor<String, String> LABEL_SELECT_PROPERTY
+      = PropertyDescriptors.propertyWithDefault("labelSelect", "");
 
   /**
    * Check if the button to change the color format inside the input field is visible.
@@ -74,5 +87,58 @@ public interface ColorPickerFieldBase<T> extends ColorPickerBase<T> {
    */
   default void setMaxHistory(int maxHistory) {
     MAX_HISTORY_PROPERTY.set(this, maxHistory);
+  }
+
+  /**
+   * Get the icon used if hovering the color field.
+   *
+   * @return The icon
+   */
+  default Icon getHoverIcon() {
+    final String iconString = HOVER_ICON_PROPERTY.get(this);
+    final String[] splitted = iconString.split(":");
+    return new Icon(splitted[0], splitted[1]);
+  }
+
+  /**
+   * Set the icon used if hovering the color field.
+   *
+   * @param icon The icon to show
+   */
+  default void setHoverIcon(Icon icon) {
+    HOVER_ICON_PROPERTY.set(this, icon.getElement().getAttribute("icon"));
+  }
+
+  /**
+   * Get the media query used to determine if native input should be used.
+   *
+   * @return The media query
+   *
+   * @see <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp">CSS Media Queries</a>
+   */
+  default String getNativeInputMediaQuery() {
+    return NATIVE_INPUT_QUERY_PROPERTY.get(this);
+  }
+
+  /**
+   * Set the media query used to determine if native input should be used.
+   *
+   * @param query The media query without the {@code @media} identifier
+   *
+   * @see <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp">CSS Media Queries</a>
+   */
+  default void setNativeInputMediaQuery(String query) {
+    NATIVE_INPUT_QUERY_PROPERTY.set(this, query);
+  }
+
+  default ColorPickerFieldI18n getI18n() {
+    return new ColorPickerFieldI18n()
+        .setSelect(LABEL_SELECT_PROPERTY.get(this))
+        .setCancel(LABEL_CANCEL_PROPERTY.get(this));
+  }
+
+  default void setI18n(ColorPickerFieldI18n i18n) {
+    LABEL_SELECT_PROPERTY.set(this, i18n.getSelect());
+    LABEL_CANCEL_PROPERTY.set(this, i18n.getCancel());
   }
 }

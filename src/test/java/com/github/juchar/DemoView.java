@@ -1,7 +1,9 @@
 package com.github.juchar;
 
 import com.github.juchar.colorpicker.ColorPickerField;
+import com.github.juchar.colorpicker.ColorPickerFieldI18n;
 import com.github.juchar.colorpicker.ColorPickerFieldRaw;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import java.awt.Color;

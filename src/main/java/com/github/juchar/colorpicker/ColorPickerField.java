@@ -7,6 +7,7 @@ import com.vaadin.flow.component.InputNotifier;
 import com.vaadin.flow.component.KeyNotifier;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.textfield.GeneratedVaadinTextField;
 import com.vaadin.flow.component.textfield.HasAutocapitalize;
 import com.vaadin.flow.component.textfield.HasAutocomplete;
@@ -26,6 +27,7 @@ public class ColorPickerField extends GeneratedVaadinTextField<ColorPickerField,
 
   private ValueChangeMode currentMode;
   private boolean isConnectorAttached;
+  private Icon hoverIcon;
 
   /**
    * Constructs an empty {@code ColorPickerField}.
