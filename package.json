@@ -2,7 +2,7 @@
   "name": "no-name",
   "license": "UNLICENSED",
   "dependencies": {
-    "@appreciated/color-picker-field": "^2.0.0-alpha.8",
+    "@appreciated/color-picker-field": "^2.0.0-beta.1",
     "@polymer/polymer": "3.2.0",
     "@vaadin/flow-deps": "./target/frontend",
     "@webcomponents/webcomponentsjs": "^2.2.10"
@@ -17,5 +17,5 @@
     "webpack-merge": "4.2.1",
     "raw-loader": "3.0.0"
   },
-  "vaadinAppPackageHash": "b1a43ed5468e80c7d377bc88e70e2f40a2428f38352a6d64a0591a8821caed70"
+  "vaadinAppPackageHash": "8a3abd0951b0dce90d5b90d9e19bdd16e74b3412bb1dd0d221aad7d4158d47f2"
 }

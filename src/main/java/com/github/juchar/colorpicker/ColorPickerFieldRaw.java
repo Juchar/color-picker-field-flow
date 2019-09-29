@@ -1,11 +1,13 @@
 package com.github.juchar.colorpicker;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.textfield.TextField;
 
 @Tag("color-picker-field")
-@HtmlImport("bower_components/color-picker-field/color-picker-field.html")
+@NpmPackage(value = "@appreciated/color-picker-field", version = "2.0.0-beta.1")
+@JsModule("@appreciated/color-picker-field/color-picker-field.js")
 public class ColorPickerFieldRaw extends TextField implements ColorPickerFieldBaseRaw {
 
   /**
