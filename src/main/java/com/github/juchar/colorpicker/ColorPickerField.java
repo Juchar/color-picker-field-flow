@@ -6,7 +6,8 @@ import com.vaadin.flow.component.HasValidation;
 import com.vaadin.flow.component.InputNotifier;
 import com.vaadin.flow.component.KeyNotifier;
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.textfield.GeneratedVaadinTextField;
 import com.vaadin.flow.component.textfield.HasAutocapitalize;
@@ -19,7 +20,8 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import java.awt.Color;
 
 @Tag("color-picker-field")
-@HtmlImport("bower_components/color-picker-field/color-picker-field.html")
+@NpmPackage(value = "@appreciated/color-picker-field", version = "2.0.0-alpha.8")
+@JsModule("@appreciated/color-picker-field/color-picker-field.js")
 public class ColorPickerField extends GeneratedVaadinTextField<ColorPickerField, Color>
     implements ColorPickerFieldBaseColor, HasSize, HasValidation, HasValueChangeMode,
     HasPrefixAndSuffix, InputNotifier, KeyNotifier, CompositionNotifier,
