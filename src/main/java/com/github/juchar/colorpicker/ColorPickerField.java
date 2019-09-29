@@ -20,7 +20,7 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import java.awt.Color;
 
 @Tag("color-picker-field")
-@NpmPackage(value = "@appreciated/color-picker-field", version = "2.0.0-alpha.1")
+@NpmPackage(value = "@appreciated/color-picker-field", version = "2.0.0-alpha.4")
 @JsModule("@appreciated/color-picker-field/color-picker-field.js")
 public class ColorPickerField extends GeneratedVaadinTextField<ColorPickerField, Color>
     implements ColorPickerFieldBaseColor, HasSize, HasValidation, HasValueChangeMode,
