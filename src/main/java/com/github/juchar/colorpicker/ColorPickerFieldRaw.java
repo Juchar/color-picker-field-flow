@@ -13,7 +13,7 @@ import com.vaadin.flow.shared.Registration;
 import com.vaadin.flow.templatemodel.TemplateModel;
 
 @Tag("color-picker-field")
-@NpmPackage(value = "@appreciated/color-picker-field", version = "2.0.0-beta.4")
+@NpmPackage(value = "@appreciated/color-picker-field", version = "2.0.0-beta.5")
 @JsModule("@appreciated/color-picker-field/src/color-picker-field.js")
 public class ColorPickerFieldRaw extends PolymerTemplate<TemplateModel> implements ColorPickerFieldBaseRaw, HasSize, HasValue<HasValue.ValueChangeEvent<String>, String> {
 
