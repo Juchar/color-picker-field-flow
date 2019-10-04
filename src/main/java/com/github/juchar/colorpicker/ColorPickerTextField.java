@@ -38,6 +38,11 @@ public class ColorPickerTextField extends GeneratedVaadinTextField<ColorPickerTe
         setLabel(label);
     }
 
+    @Override
+    public void setPlaceholder(String placeholder) {
+        super.setPlaceholder(placeholder);
+    }
+
     /**
      * Constructs an empty {@code ColorPickerTextField}.
      */
@@ -134,6 +139,10 @@ public class ColorPickerTextField extends GeneratedVaadinTextField<ColorPickerTe
         return getLabelString();
     }
 
+    @Override
+    protected void setLabel(String label) {
+        super.setLabel(label);
+    }
 
     @Override
     public Color getEmptyValue() {
@@ -168,16 +177,6 @@ public class ColorPickerTextField extends GeneratedVaadinTextField<ColorPickerTe
     @Override
     public void setInvalid(boolean invalid) {
         super.setInvalid(invalid);
-    }
-
-    @Override
-    public void setPlaceholder(String placeholder) {
-        super.setPlaceholder(placeholder);
-    }
-
-    @Override
-    protected void setLabel(String label) {
-        super.setLabel(label);
     }
 
 }

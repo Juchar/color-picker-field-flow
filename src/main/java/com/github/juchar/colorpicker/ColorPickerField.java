@@ -9,14 +9,15 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.data.value.ValueChangeMode;
+import com.vaadin.flow.shared.Registration;
 import com.vaadin.flow.templatemodel.TemplateModel;
 
 import java.awt.*;
 
 @Tag("color-picker-field")
-@NpmPackage(value = "@appreciated/color-picker-field", version = "2.0.0-beta.2")
+@NpmPackage(value = "@appreciated/color-picker-field", version = "2.0.0-beta.4")
 @JsModule("@appreciated/color-picker-field/src/color-picker-field.js")
-public class ColorPickerField extends PolymerTemplate<TemplateModel> implements HasSize,  ColorPickerFieldBaseColor {
+public class ColorPickerField extends PolymerTemplate<TemplateModel> implements HasSize, ColorPickerFieldBaseColor, HasValue<HasValue.ValueChangeEvent<Color>, Color> {
     @Id("text-field")
     ColorPickerTextField field;
 
@@ -95,8 +96,42 @@ public class ColorPickerField extends PolymerTemplate<TemplateModel> implements 
         field.addValueChangeListener(listener);
     }
 
+    @Override
+    public Color getValue() {
+        return getTextField().getValue();
+    }
+
+    @Override
+    public void setValue(Color color) {
+        getTextField().setValue(color);
+    }
 
     public ColorPickerTextField getTextField() {
         return field;
+    }
+
+    @Override
+    public Registration addValueChangeListener(ValueChangeListener<? super ValueChangeEvent<Color>> valueChangeListener) {
+        return getTextField().addValueChangeListener(valueChangeListener);
+    }
+
+    @Override
+    public boolean isReadOnly() {
+        return getTextField().isReadOnly();
+    }
+
+    @Override
+    public void setReadOnly(boolean readOnly) {
+        getTextField().setReadOnly(readOnly);
+    }
+
+    @Override
+    public boolean isRequiredIndicatorVisible() {
+        return getTextField().isRequiredIndicatorVisible();
+    }
+
+    @Override
+    public void setRequiredIndicatorVisible(boolean visible) {
+        getTextField().setRequiredIndicatorVisible(visible);
     }
 }
